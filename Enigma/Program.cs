@@ -69,7 +69,9 @@ class Program
         Console.WriteLine(plug.Forward(0));
         Console.WriteLine(plug.Forward(1));
         Console.WriteLine(plug.Forward(4));
-        
+        var plug2 = new Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+        Console.WriteLine(plug2.Forward(0));
+        Console.WriteLine(plug2.Forward(24));
 
     }
 }

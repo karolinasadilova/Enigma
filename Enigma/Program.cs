@@ -87,9 +87,9 @@ class Program
         var machine = new EnigmaMachine(
             new Plugboard(""),
             new Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT"),
-            new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", 0, 'Q'),
-            new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", 0, 'E'),
-            new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO", 0, 'V'));
+            new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", 0, 'Q'),//left rotor
+            new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", 0, 'E'),//mid rotor
+            new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO", 0, 'V'));//rig rotor
 
         string res = "";//tady skladam vysledek
         for (int i = 0; i < 5; i++)

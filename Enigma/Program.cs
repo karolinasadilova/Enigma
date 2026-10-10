@@ -23,7 +23,7 @@ class Program
     enigma - ma stav - classa
     
     
-    bacha rotor muze byt typ a instance 
+    bacha rotor muze byt typ a instance!
     
     co dela co:
     1. rotor: prelozi pismeno, sam se otoci
@@ -65,13 +65,38 @@ class Program
     
     static void Main(string[] args)
     {
+        
+        //testovani
         var plug = new Plugboard("AB CD");
         Console.WriteLine(plug.Forward(0));
         Console.WriteLine(plug.Forward(1));
         Console.WriteLine(plug.Forward(4));
+        
+        
         var plug2 = new Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT");
         Console.WriteLine(plug2.Forward(0));
         Console.WriteLine(plug2.Forward(24));
 
+
+        var rotor = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ",0,'Q');
+        Console.WriteLine(rotor.Forward(0));
+        Console.WriteLine(rotor.Forward(4));
+        var rotor2 = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ",1,'Q');
+        Console.WriteLine(rotor2.Forward(0));
+
+        var machine = new EnigmaMachine(
+            new Plugboard(""),
+            new Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT"),
+            new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", 0, 'Q'),
+            new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", 0, 'E'),
+            new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO", 0, 'V'));
+
+        string res = "";//tady skladam vysledek
+        for (int i = 0; i < 5; i++)
+        {
+            res += (char)('A' + machine.EncryptChar(0));
+
+        }
+        Console.WriteLine(res);
     }
 }
